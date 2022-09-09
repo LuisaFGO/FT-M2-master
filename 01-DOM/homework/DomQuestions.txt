@@ -1,0 +1,3 @@
+Dom = Es un modelo de objetos o una estructura de arbol de un HTML parseado a JS.
+DomSelector = Nos permiten acceder a dichos objetos del Dom (agregar, eliminar, buscar, sobrescribir)
+DomEvent = Son el resultado (funciones) después de ejecutar una acciones, por un click, al mover el mouse, etc.

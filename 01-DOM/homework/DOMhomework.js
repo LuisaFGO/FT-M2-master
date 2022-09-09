@@ -28,7 +28,7 @@ function ToDo (description) {
 
 // Tu código acá:
 ToDo.prototype.completeToDo = function(){
-  this.complete = true;
+  this.complete = !this.complete; //va a ser un interruptor
 }
 
 
@@ -53,12 +53,13 @@ ToDo.prototype.completeToDo = function(){
 function buildToDo(todo, index) {
   // Tu código acá:
 let toDoShell= document.createElement('div');
-toDoShell.className = 'toDoShell';
+toDoShell.className = 'toDoShell'; //toDoShell.setAttribute('class', 'toDoShell');
+//toDoShell.addEventListener('click', completeToDo);tache
 let toDoText= document.createElement('span');
 toDoText.innerHTML = todo.description;
-toDoText.id = index;
+toDoText.id = index; //toDoText.setAttribut('id', 'index');
 if(todo.complete)toDoText.className = 'completeText';
-toDoText.addEventListener('click',completeToDo);
+toDoText.addEventListener('click',completeToDo);//tache
 toDoShell.appendChild(toDoText);
 return toDoShell;
 }
@@ -85,7 +86,7 @@ return toDos.map((e,i)=>buildToDo(e,i))
 
 function displayToDos() {
   // Tu código acá:
-  let toDoContainer=document.getElementById('toDoContainer');
+  let toDoContainer=document.getElementById('toDoContainer'); // = document.querySelecotor('#todoContainer');
   toDoContainer.innerHTML = "";
   let result = buildToDos(toDoItems);
   result.forEach(element => {
@@ -106,7 +107,7 @@ function displayToDos() {
 function addToDo() {
   // Tu código acá:
  let input = document.querySelector('#toDoInput');
- let newToDo = new ToDo(input.value);
+ let newToDo = new ToDo(input.value); // ... new ToDo(toDoValue);
  toDoItems.push(newToDo);
  input.value ='';
  displayToDos();
@@ -119,6 +120,9 @@ function addToDo() {
 
 // Tu código acá:
 document.getElementById('addButton').addEventListener('click', addToDo);
+document.querySelector('#toDoInput').addEventListener('keypress', function(event){
+  if(event.keyCode === 13){addToDo();}// agregar al oprimir enter
+})
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
