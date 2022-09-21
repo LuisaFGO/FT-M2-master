@@ -1,0 +1,6 @@
+* Framework : Una guia o un marco de trabajo que tiene una estructura baseque facilita
+la solución de problemas.
+* Preprocesador: Programa separado invocado por el compilador antes de una traducción real,
+para invocar archivos o ciertas situaciones en particular.
+* Responsive website: Es un diseño capaz de adaptarse a cualquier disposite en el que se 
+visualice, mejorando la experiencia del usuario.
